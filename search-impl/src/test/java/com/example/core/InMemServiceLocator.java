@@ -47,7 +47,7 @@ public class InMemServiceLocator implements ServiceLocator {
                 .thenApply(defaultPort -> {
                             int port = service.getOrDefault(name, (Integer) defaultPort);
                             try {
-                                return Optional.of(new URI("http://localhost:" + port));
+                                return Optional.of(new URI("http://127.0.0.1:" + port));
                             } catch (URISyntaxException e) {
                                 throw new RuntimeException(e);
                             }
